@@ -1,10 +1,19 @@
-@Domain = https://localhost
-@Port = 7027
 
 @Restaurants.API_HostAddress = https://localhost:7027
 
-GET {{Restaurants.API_HostAddress}}/restaurants/api
+GET {{Restaurants.API_HostAddress}}/api/restaurants
 Accept: application/json
 
 ###
 
+Post {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+
+{
+  "Name":"test",
+  "Description":"tttttttt",
+  "Category":"ddd"
+}
+
+###
