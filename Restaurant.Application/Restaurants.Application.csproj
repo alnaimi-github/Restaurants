@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Restaurants.Domain\Restaurants.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Restaurants\Validators\" />
+  </ItemGroup>
+
 </Project>

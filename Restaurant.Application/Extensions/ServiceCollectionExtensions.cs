@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using Restaurants.Application.Restaurants;
 
 namespace Restaurants.Application.Extensions;
 
@@ -10,7 +9,7 @@ public static class ServiceCollectionExtensions
     public static void AddInApplication(this IServiceCollection services)
     {
         var applicationAssembly = typeof(ServiceCollectionExtensions).Assembly;
-        services.AddScoped<IRestaurantsService, RestaurantsService>();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(applicationAssembly));
 
         services.AddAutoMapper(applicationAssembly);
 

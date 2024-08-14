@@ -1,19 +1,20 @@
-
 @Restaurants.API_HostAddress = https://localhost:7027
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
-Accept: application/json
+Content-Type: application/json
 
 ###
 
-Post {{Restaurants.API_HostAddress}}/api/restaurants
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
-
 {
-  "Name":"test",
-  "Description":"tttttttt",
-  "Category":"ddd"
+  //CreateRestaurantCommand
 }
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{id:int}?id=0
 
 ###
