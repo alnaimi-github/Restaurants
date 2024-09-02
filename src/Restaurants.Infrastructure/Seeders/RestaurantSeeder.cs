@@ -10,6 +10,11 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
 {
     public async Task Seed()
     {
+        if(dbContext.Database.GetPendingMigrations().Any())
+        {
+            await dbContext.Database.MigrateAsync();
+        }
+
         if (await dbContext.Database.CanConnectAsync())
         {
             if (!await dbContext.Restaurants.AnyAsync())
@@ -41,10 +46,15 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
 
     private static IEnumerable<Restaurant> GetRestaurants()
     {
+        var owner = new User
+        {
+            Email = "seed-user@test.com"
+        };
         List<Restaurant> restaurants =
         [
             new Restaurant
             {
+                Owner = owner,
                 Name = "The Gourmet Bistro",
                 Description = "A fine dining experience with a wide range of gourmet dishes.",
                 Category = "Fine Dining",
@@ -73,6 +83,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
             },
             new Restaurant
             {
+                 Owner = owner,
                 Name = "The Cozy Cafe",
                 Description = "A casual cafe with a relaxed atmosphere and comfort food.",
                 Category = "Cafe",
@@ -101,6 +112,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
             },
             new Restaurant
             {
+                 Owner = owner,
                 Name = "Sushi World",
                 Description = "Authentic Japanese sushi and sashimi.",
                 Category = "Japanese",
@@ -129,6 +141,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
             },
             new Restaurant
             {
+                 Owner = owner,
                 Name = "Pasta Paradise",
                 Description = "Delicious pasta dishes made from scratch.",
                 Category = "Italian",

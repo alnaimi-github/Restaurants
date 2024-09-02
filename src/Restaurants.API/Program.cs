@@ -6,37 +6,49 @@ using Restaurants.Infrastructure.Seeders;
 using Serilog;
 using Restaurants.API.Extensions;
 
-var builder = WebApplication.CreateBuilder(args);
+try
+{
+    var builder = WebApplication.CreateBuilder(args);
 
-builder.AddPresentation();
-builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddInApplication();
+    builder.AddPresentation();
+    builder.Services.AddInfrastructure(builder.Configuration);
+    builder.Services.AddInApplication();
 
-var app = builder.Build();
+    var app = builder.Build();
 
-var scope = app.Services.CreateScope();
-var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
-await seeder.Seed();
+    var scope = app.Services.CreateScope();
+    var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
+    await seeder.Seed();
 
 
-app.UseMiddleware<ErrorHandlingMiddleware>();
-app.UseMiddleware<RequestTimeLoggingMiddleware>();
-app.UseSerilogRequestLogging();
+    app.UseMiddleware<ErrorHandlingMiddleware>();
+    app.UseMiddleware<RequestTimeLoggingMiddleware>();
+    app.UseSerilogRequestLogging();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 
-app.MapGroup("api/identity")
-    .WithTags("Identity")
-    .MapIdentityApi<User>();
+    app.MapGroup("api/identity")
+        .WithTags("Identity")
+        .MapIdentityApi<User>();
 
-app.UseAuthorization();
+    app.UseAuthorization();
 
-app.MapControllers();
+    app.MapControllers();
 
-app.Run();
+    app.Run();
 
+
+}
+catch (Exception e)
+{
+    Log.Fatal(e, "Application start-up failed");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
 
 public partial class Program {}
