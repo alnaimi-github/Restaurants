@@ -10,7 +10,7 @@ public class GetAllRestaurantQueryValidator:AbstractValidator<GetAllRestaurantQu
     public GetAllRestaurantQueryValidator()
     {
         RuleFor(r => r.PageNumber)
-            .GreaterThan(1);
+            .GreaterThanOrEqualTo(1);
         RuleFor(r => r.PageSize)
             .Must(value => _allowPagesSizes.Contains(value))
             .WithMessage($"Page size must be in [{string.Join(",",_allowPagesSizes)}]");
