@@ -1,0 +1,33 @@
+@Restaurants.API_HostAddress = https://localhost:7027
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+###
+
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  //CreateRestaurantCommand
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{id:int}?id=0
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{id:int}?id=0
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/{id:int}?id=0
+Content-Type: application/json
+
+{
+  //UpdateRestaurantCommand
+}
+
+###
