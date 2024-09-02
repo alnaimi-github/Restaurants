@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Restaurant.Application\Restaurants.Application.csproj" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.21.2" />
 
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">

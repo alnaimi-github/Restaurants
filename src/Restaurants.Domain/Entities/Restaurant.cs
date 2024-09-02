@@ -18,6 +18,8 @@ public class Restaurant
     public User Owner { get; set; }= default!;
     public string OwnerId { get; set; } = default!;
 
+    public string? LogoUrl { get; set; }
+
     public static implicit operator Restaurant(List<Restaurant> v)
     {
         throw new NotImplementedException();
