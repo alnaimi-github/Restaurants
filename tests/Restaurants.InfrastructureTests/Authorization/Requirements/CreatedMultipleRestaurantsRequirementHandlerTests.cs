@@ -42,7 +42,7 @@ public class CreatedMultipleRestaurantsRequirementHandlerTests
         var requirement = new CreatedMultipleRestaurantsRequirement(2);
         var handler = new CreatedMultipleRestaurantsRequirementHandler(restaurantsRepositoryMock.Object,
             userContextMock.Object);
-        var context = new AuthorizationHandlerContext([requirement], null, null);
+        var context = new AuthorizationHandlerContext([requirement], null!, null);
 
         // Act
 
@@ -79,7 +79,7 @@ public class CreatedMultipleRestaurantsRequirementHandlerTests
         var requirement = new CreatedMultipleRestaurantsRequirement(2);
         var handler = new CreatedMultipleRestaurantsRequirementHandler(restaurantsRepositoryMock.Object,
             userContextMock.Object);
-        var context = new AuthorizationHandlerContext([requirement], null, null);
+        var context = new AuthorizationHandlerContext([requirement], null!, null);
 
         // Act
 

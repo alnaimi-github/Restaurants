@@ -52,7 +52,7 @@ public class UserContextTests
     {
         //Arrange
         var httpContextAccessorMock = new Mock<IHttpContextAccessor>();
-        httpContextAccessorMock.Setup(x => x.HttpContext).Returns((HttpContext)null);
+        httpContextAccessorMock.Setup(x => x.HttpContext).Returns((HttpContext)null!);
         var userContext = new UserContext(httpContextAccessorMock.Object);
 
         //Act 
