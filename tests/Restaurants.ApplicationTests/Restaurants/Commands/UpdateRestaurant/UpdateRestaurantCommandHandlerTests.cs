@@ -26,7 +26,7 @@ public class UpdateRestaurantCommandHandlerTests
         _restaurantRepositoryMock = new Mock<IRestaurantRepository>();
         _mapperMock = new Mock<IMapper>();
         _restaurantAuthorizationServiceMock = new Mock<IRestaurantAuthorizationService>();
-        _handler = new UpdateRestaurantCommandHandler((ILogger<UpdateRestaurantCommandHandler>)_loggerMock.Object,
+        _handler = new UpdateRestaurantCommandHandler(_loggerMock.Object,
             _mapperMock.Object, _restaurantRepositoryMock.Object, _restaurantAuthorizationServiceMock.Object);
     }
 
@@ -76,13 +76,13 @@ public class UpdateRestaurantCommandHandlerTests
             .ReturnsAsync((Restaurant?)null);
 
         // Act
-
         var act = async () => await _handler.Handle(request, CancellationToken.None);
 
         // Assert 
         await act.Should().ThrowAsync<NotFoundException>()
-            .WithMessage($"Restaurant with id: {restaurantId} doesn't exist");
+            .WithMessage($"Restaurant with id: {restaurantId} doesn't exist!");
     }
+
 
     [Fact]
     public async Task Handle_WithUnauthorizedUser_ShouldThrowForbidException()
