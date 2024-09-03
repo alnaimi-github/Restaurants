@@ -25,7 +25,7 @@ public class ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> logger):IM
         {
            logger.LogError(e,e.Message);
            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-          await context.Response.WriteAsync("Something went wrong!");
+          await context.Response.WriteAsync("Something went wrong!"+e.Message);
         }
     }
 }
