@@ -5,6 +5,7 @@ using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 using Serilog;
 using Restaurants.API.Extensions;
+using Microsoft.Extensions.Azure;
 
 try
 {
