@@ -15,6 +15,7 @@ try
     builder.Services.AddInfrastructure(builder.Configuration);
     builder.Services.AddInApplication();
 
+
     var app = builder.Build();
 
     var scope = app.Services.CreateScope();

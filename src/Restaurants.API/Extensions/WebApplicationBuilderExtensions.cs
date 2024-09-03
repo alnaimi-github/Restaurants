@@ -11,6 +11,7 @@ public static class WebApplicationBuilderExtensions
     {
         builder.Services.AddAuthentication();
         builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(option =>
         {
             option.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
