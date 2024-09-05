@@ -40,8 +40,9 @@
 
 
 - **Azure Integration**: Deployed on **Azure**, leveraging **Azure App Services** and **Azure SQL** for high availability and scalability.
+- 
 ![image](https://github.com/user-attachments/assets/943bea4a-f76a-4cfa-9011-3c8985b09109)
-![image](https://github.com/user-attachments/assets/7cff5eaf-d08c-4124-af63-79d59948a1df)
+![image](https://github.com/user-attachments/assets/3ea35962-16bf-4589-9bce-3aa56abe5845)
 ![image](https://github.com/user-attachments/assets/aa6a5653-9fa5-4ee1-a7ae-b3ba60e10c86)
 ![image](https://github.com/user-attachments/assets/8bb0bc3f-dee1-47b4-9a24-f0bdc5a82c67)
 ![image](https://github.com/user-attachments/assets/71a33cfe-78dc-4570-b0e2-6a75cbb8e570)
@@ -86,6 +87,8 @@ The project is organized according to **Clean Architecture** principles:
 
 - **Azure Deployment**: The application is deployed on **Azure** using **Azure App Services** and **Azure SQL** to ensure high availability and scalability.
 - **CI/CD**: **GitHub Actions** is utilized for automating build, test, and deployment processes, ensuring efficient and reliable updates.
+
+![image](https://github.com/user-attachments/assets/cd334549-20c1-4f0b-a830-f560f1104926)
 
 ---
 
