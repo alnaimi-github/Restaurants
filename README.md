@@ -113,7 +113,6 @@ This project exemplifies advanced software engineering principles by integrating
 
 ## **Additional Resources**
 
-- [API Documentation](restaurants-apis-prod-gtf8bxcffwh5ajdd.eastasia-01.azurewebsites.net/swagger) - Explore the API endpoints and functionality.
-- [GitHub Repository](https://github.com/your-repo-link) - Access the project's source code and contribute.
-- [Azure Deployment Guide](https://docs.microsoft.com/en-us/azure/app-service/overview) - Learn more about Azure App Services.
+- [API Documentation](https://restaurants-apis-prod-gtf8bxcffwh5ajdd.eastasia-01.azurewebsites.net/swagger) - Explore the API endpoints and functionality.
+
 
