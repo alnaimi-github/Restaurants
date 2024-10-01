@@ -67,9 +67,18 @@
 
 ## **Design Patterns Used**
 
-- **Factory Pattern**: Used for creating service instances, promoting extensibility and maintaining a single responsibility for object creation.
+- Mediator Design Pattern:
+Mediator Interface: Declares methods used by components to communicate.
+Concrete Mediator: Implements the mediator interface and coordinates communication between components.
+Colleague Components: The objects that interact with each other via the mediator.
+MediatR in C#
+MediatR is a popular library that implements this pattern in .NET, commonly used with CQRS (Command Query Responsibility Segregation). It provides a way to decouple the request handlers and their invokers using simple, consistent interfaces.
+
+Key Concepts in MediatR:
+Requests/Commands/Queries: Define what action to perform.
+Handlers: Implement the logic to handle requests/commands/queries.
+MediatR Interface: IMediator is used to send requests and invoke the corresponding handlers.
 - **Singleton Pattern**: Ensures a single instance of critical services, such as the database context, for consistency and reduced overhead.
-- **Observer Pattern**: Manages event-driven actions within the application, such as notifications and logging.
 
 ---
 
